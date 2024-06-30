@@ -10,7 +10,7 @@ _src_path = path.join(path.dirname(path.abspath(__file__)), "src")
 
 if torch.cuda.is_available():
     _backend = load(name="inplace_abn",
-                    extra_cflags=["-O3"],
+                    extra_cflags=['-O2'],
                     sources=[path.join(_src_path, f) for f in [
                         "inplace_abn.cpp",
                         "inplace_abn_cpu.cpp",
@@ -20,7 +20,7 @@ if torch.cuda.is_available():
                     extra_cuda_cflags=["--expt-extended-lambda"])
 else:
     _backend = load(name="inplace_abn",
-                    extra_cflags=["-O3"],
+                    extra_cflags=["-O2"],
                     sources=[path.join(_src_path, f) for f in [
                         "inplace_abn_cpu_only.cpp",
                         "inplace_abn_cpu.cpp"

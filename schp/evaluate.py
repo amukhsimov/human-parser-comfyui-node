@@ -22,7 +22,7 @@ from PIL import Image as PILImage
 import torchvision.transforms as transforms
 import torch.backends.cudnn as cudnn
 
-import networks
+import schp.networks
 from datasets.datasets import LIPDataValSet
 from utils.miou import compute_mean_ioU
 from utils.transforms import BGR2RGB_transform
@@ -127,7 +127,7 @@ def main():
     h, w = map(int, args.input_size.split(','))
     input_size = [h, w]
 
-    model = networks.init_model(args.arch, num_classes=args.num_classes, pretrained=None)
+    model = schp.networks.init_model(args.arch, num_classes=args.num_classes, pretrained=None)
 
     IMAGE_MEAN = model.mean
     IMAGE_STD = model.std
@@ -205,5 +205,5 @@ def main():
     return
 
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()
