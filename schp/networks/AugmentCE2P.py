@@ -326,7 +326,7 @@ def initialize_pretrained_model(model, settings, pretrained='./models/resnet101-
         for i in saved_state_dict:
             i_parts = i.split('.')
             if not i_parts[0] == 'fc':
-                new_params['.'.join(i_parts[0:])] = saved_state_dict[i]
+                new_params['.'.join(i_parts[1:])] = saved_state_dict[i]
         model.load_state_dict(new_params)
 
 

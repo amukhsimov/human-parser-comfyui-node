@@ -13,6 +13,7 @@ if __name__ == '__main__':
         keywords='computer vision, human part segmentation',
         url='https://github.com/amukhsimov/human-parser-comfyui-node',
         packages=['schp', 'schp.utils', 'schp.datasets', 'schp.modules', 'schp.networks'],
+        package_data={'schp.modules': ['src/*', 'src/utils/*']},
         include_package_data=True,
         classifiers=[
             'Development Status :: 5 - Production/Stable',
@@ -27,7 +28,7 @@ if __name__ == '__main__':
         license='Apache License 2.0',
         install_requires=[
             'torch==2.3.0',
-            'opencv-python==4.4.0.46',
+            'opencv-python==4.8.0.76',
             'Ninja==1.11.1.1',
             'numpy==1.25.2'
         ]
